@@ -8,10 +8,10 @@ typedef struct contact {
 } contact;
 
 void Add(contact user[], int num);
-void display(contact user[], int num);
+void display(contact user[], int num); 
 contact* search(contact user[], int num);
-void update(contact* user);
-int Delete(contact user[], int *num);
-void sortContacts(contact user[], int num); 
+void update(contact* user); 
+int Delete(contact user[], contact* userToDelete, int *num); 
+void sortContacts(contact user[], int num);
 
 #endif
