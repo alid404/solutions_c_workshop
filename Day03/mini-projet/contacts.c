@@ -1,7 +1,7 @@
-#include stdio.h
-#include string.h
-#include ctype.h
-#include contacts.h
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include "contacts.h"
 
 void Add(contact user[], int num) {
     for (int i = 0; i < num; i++) {
