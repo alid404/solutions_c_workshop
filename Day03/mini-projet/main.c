@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "contacts.h"
+
 int main(void) {
     int num = 0, choice, firstRun = 1;
     
