@@ -16,6 +16,8 @@ void Add(contact user[], int num) {
         printf("Enter the email address of user %d: ", i + 1);
         fgets(user[i].email_address, sizeof(user[i].email_address), stdin);
         user[i].email_address[strcspn(user[i].email_address, "\n")] = 0; 
+        
+        printf("User has been added\n");
     }
 }
 
@@ -41,7 +43,7 @@ contact* search(contact user[], int num) {
     return NULL;
 }
 
-void update(contact* user) {
+void update(contact* user) { 
     printf("The current phone number is %s\n", user->phone_number);
     printf("The email address is %s\n", user->email_address);
     
@@ -52,16 +54,18 @@ void update(contact* user) {
     printf("Enter the new email address: ");
     fgets(user->email_address, sizeof(user->email_address), stdin);
     user->email_address[strcspn(user->email_address, "\n")] = 0;
+    
+    printf("User has been modified\n");
 }
 
-int Delete(contact user[], int *num) {
-    contact* userToDelete = search(user, *num);
+int Delete(contact user[], contact* userToDelete, int *num) {
     if (userToDelete != NULL) {
         for (int i = 0; i < *num; i++) {
             if (&user[i] == userToDelete) {
                 for (int j = i; j < *num - 1; j++) {
                     user[j] = user[j + 1];
                 }
+                printf("User has been deleted\n");
                 (*num)--; 
                 break;
             }
